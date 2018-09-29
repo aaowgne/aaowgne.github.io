@@ -7,13 +7,13 @@
 body { 
     font-size: 16px; 
     line-height: 32px;
-    font-family: /* Ubuntu, sans-serif */;
-    color: /* #xxxxxx */;
+    font-family:  sans-serif;
+    color: blue;
 }
 
 h1 {
-    font-size: /* x.xrem  (rem is a unit of measure) */;
-    color: /* #xxxxxx */;
+    font-size: 1.5rem;
+    color: white;
 }
 
 h2 {
