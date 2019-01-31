@@ -31,6 +31,7 @@ h2 {
     border-bottom: 1px solid #bbb;
     animation-name: example;
     animation-duration: 5s;
+    animation-delay: 2s;
 }
 
 header, main, footer {
