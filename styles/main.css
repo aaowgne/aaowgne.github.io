@@ -16,12 +16,18 @@ h1 {
     font-size: 2rem;
     color: rgb(0, 0, 0);
 }
-
+/* The animation code */
+@keyframes example {
+    from {color: blue;}
+    to {color: red;}
+  }
 h2 {
     font-size: 1.5rem;
     color:  blue;
     text-align: center;
     border-bottom: 1px solid #bbb;
+    animation-name: example;
+    animation-duration: 5s;
 }
 
 header, main, footer {
