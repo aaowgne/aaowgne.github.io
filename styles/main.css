@@ -16,7 +16,7 @@ h1 {
     font-size: 2rem;
     color: rgb(0, 0, 0);
 }
-/* The animation code */
+
 @keyframes example {
   0%   {color:blue; text-align:center;}
   25%  {color:yellow; text-align:right;}
@@ -30,9 +30,9 @@ h2 {
     text-align: center;
     border-bottom: 1px solid #bbb;
     animation-name: example;
-    animation-duration: 5s;
+    animation-duration: 2s;
     animation-delay: 2s;
-    animation-iteration-count: 3;
+    animation-iteration-count: 4;
 }
 
 header, main, footer {
