@@ -30,9 +30,9 @@ h2 {
     text-align: center;
     border-bottom: 1px solid #bbb;
     animation-name: example;
-    animation-duration: 2s;
+    animation-duration: 5s;
     animation-delay: 2s;
-    animation-iteration-count: 4;
+    animation-iteration-count: 3;
 }
 
 header, main, footer {
