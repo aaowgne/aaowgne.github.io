@@ -47,3 +47,9 @@ vertical-align: middle;
 
 
 }
+ul li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+    background-color: green;
+    
+  }
