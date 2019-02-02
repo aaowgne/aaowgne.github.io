@@ -50,9 +50,8 @@ vertical-align: middle;
 ul li {
     padding: 8px 16px;
     border-bottom: 1px solid #ddd;
-    background-color: green;
-    font-size: 2 rem;
-    color: #fff;
+    background-color: #74b3ce;
+    font-size: 2 rem;    
     text-align: center;
-    
+    color: #fff;
   }
