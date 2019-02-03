@@ -25,7 +25,7 @@ vertical-align: middle;
 
 }
 .motto{
-    font-size: 1.1rem;
+    font-size: 1.9rem;
     color:black;
     font-style: italic;
 
@@ -48,24 +48,30 @@ vertical-align: middle;
 
 }
 ul li  {
-    padding: 40px 16px;
+    padding: 40px 16px;    
     border-bottom: 1px solid #ddd;
     background-color: #74b3ce;
     font-size: 2rem;       
     text-align: center;
-    list-style-type: none;      
+    list-style-type: none;
+          
   }
   a:link {
     color: white;
+    text-decoration: none;
   }
   a:visited {
     color: green;
+    text-decoration: none;
   }
   a:hover {
     color: red;
+    text-decoration: none;
   }
   a:active {
     color: black;
+    text-decoration: none;
+    background-color: #508991;
   }
   footer{
     background-color: #78c091;
