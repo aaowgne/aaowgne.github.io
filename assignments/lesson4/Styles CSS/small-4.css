@@ -47,11 +47,29 @@ vertical-align: middle;
 
 
 }
-ul li a {
+ul li  {
     padding: 40px 16px;
     border-bottom: 1px solid #ddd;
     background-color: #74b3ce;
-    font-size: 2rem;    
+    font-size: 2rem;       
     text-align: center;
-    color: #fff;
+    list-style-type: none;      
   }
+  a:link {
+    color: white;
+  }
+  a:visited {
+    color: green;
+  }
+  a:hover {
+    color: red;
+  }
+  a:active {
+    color: black;
+  }
+  footer{
+    background-color: #78c091;
+    text-align: center;
+    padding: .5rem;
+    color: white;
+    }
