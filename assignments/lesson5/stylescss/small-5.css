@@ -1,0 +1,82 @@
+body{
+    font-family: 'Merriweather', serif;
+font-family: 'Roboto', sans-serif;
+font-size: 18px;
+}
+header{
+background-color: #78c091;
+text-align: center;
+padding: .5rem;
+color: white;
+}
+header > img {
+width: 150px;
+height: auto;
+vertical-align: middle;
+
+}
+.headertext {
+    display: inline-block;
+    vertical-align: middle;
+
+}
+.headertext h1{
+    font-size: 3rem;
+
+}
+.motto{
+    font-size: 1.9rem;
+    color:black;
+    font-style: italic;
+
+}
+.currentconditions{
+    display: inline-block;
+    margin: 1rem 0 1rem 5rem;
+    padding: 1.2rem;
+    vertical-align: middle;
+    color: white;
+    background-color: blue;
+    border: 1pt solid black;
+    font-size: 1.1rem;
+
+}
+.currentconditions img {
+    width: 90px;
+    height: auto;
+
+
+}
+ul li  {
+    padding: 40px 16px;    
+    border-bottom: 1px solid #ddd;
+    background-color: #74b3ce;
+    font-size: 2rem;       
+    text-align: center;
+    list-style-type: none;
+          
+  }
+  a:link {
+    color: white;
+    text-decoration: none;
+  }
+  a:visited {
+    color: green;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    text-decoration: none;
+  }
+  a:active {
+    color: black;
+    text-decoration: none;
+    background-color: #508991;
+  }
+  footer{
+    background-color: #78c091;
+    text-align: center;
+    padding: .5rem;
+    color: white;
+    }
+    
