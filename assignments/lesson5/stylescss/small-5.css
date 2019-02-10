@@ -47,6 +47,8 @@ vertical-align: middle;
 
 
 }
+
+
 ul li  {
     padding: 40px 16px;    
     border-bottom: 1px solid #ddd;
@@ -73,10 +75,40 @@ ul li  {
     text-decoration: none;
     background-color: #508991;
   }
+  h2 {
+    text-align: center;  
+  }
+
+  div.hero {
+    margin: 10px auto;
+    position: relative;    
+    width: 100%;
+    height: 400px;
+  }
+
+  div.hero-ph {
+    margin: 10px auto;
+    background-color: #404e4d;    
+    width: 100%;
+    height: 250px;
+  }
+  .weathersummary {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      background-color: #78c091;
+      padding: .5rem;
+      box-shadow: 0 0 30px #777;
+
+  }
+  .forecast {
+    display: none;
+  }
   footer{
     background-color: #78c091;
     text-align: center;
     padding: .5rem;
     color: white;
     }
-    
+
+
