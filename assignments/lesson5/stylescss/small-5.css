@@ -84,13 +84,15 @@ ul li  {
     position: relative;    
     width: 100%;
     height: 400px;
+    padding: .5rem;
   }
 
-  div.hero-ph {
-    margin: 10px auto;
-    background-color: #404e4d;    
+  div.hero-ph > img { 
+    
+    margin: 10px auto;        
     width: 100%;
-    height: 250px;
+    height: 400px;
+    padding: .5rem;
   }
   .weathersummary {
       position: absolute;
@@ -101,9 +103,18 @@ ul li  {
       box-shadow: 0 0 30px #777;
 
   }
+  h3 {
+    text-align: center;
+  }
   .forecast {
     display: none;
-  }
+  
+  
+    
+}
+
+
+
   footer{
     background-color: #78c091;
     text-align: center;

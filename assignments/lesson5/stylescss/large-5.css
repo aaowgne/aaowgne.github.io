@@ -21,5 +21,36 @@
         margin: auto;
     }
     
+    
+    section.forecast {   
+
+        display: block;
+        font-family: 'Lato', sans-serif;
+        padding: 20px;
+        text-align: center;
+        
+    }
+
+    section.forecast table { 
+             
+        margin: auto auto 40px auto;        
+    }
+
+    .forecast td,
+    .forecast th {                
+        border: 3px solid #ddd;
+        padding: .8rem;
+    }
+
+    .forecast th {
+        background-color: #74b3ce;
+        color: #fff;
+        padding: 1.3%;
+        font-size: 1.2rem;
+    }
+
+    .forecast tbody {        
+        font-size: 1.5em;
+    }
 
 }
