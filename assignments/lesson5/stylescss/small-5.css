@@ -106,11 +106,9 @@ ul li  {
   h3 {
     text-align: center;
   }
-  .forecast {
+  section.forecast {
     display: none;
-  
-  
-    
+      
 }
 
 
