@@ -1,6 +1,6 @@
 @media only screen and (min-width: 45em) 
 {
-    nav button {
+    nav .button {
         display: none;
     }
     
@@ -62,5 +62,6 @@
         font-size: 1em;
         text-indent: 20px;
     }
+    
     
 }
