@@ -47,7 +47,16 @@ vertical-align: middle;
 
 
 }
+nav button {
+    margin: .2rem 2%;
+    background-color: black;
+    border: none;
+    font-size: 1.6rem;
+    color: #fff;
+}
 
+nav ul.hide {
+    display: none;}
 
 ul li  {
     padding: 40px 16px;    

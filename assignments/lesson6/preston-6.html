@@ -23,8 +23,8 @@
                 </div>
             </header>
             <nav>
-                   
-                <ul>
+                <button onclick="toggleNavMenu()">&#9776;</button>  
+                <ul id="primaryNav" class="hide">
                     <li><a href="Home">Home</a></li>
                     <li><a href="Preston">Preston</a></li>
                     <li><a href="SodaSprings">Soda Springs</a></li>
@@ -37,7 +37,8 @@
                     <h2>Preston City</h2>
                     <div class="hero">
                         
-                        <div class="hero-ph"> <img src="https://images.pexels.com/photos/1552212/pexels-photo-1552212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Snow Forest">
+                        <div class="hero-ph"> <img src="images/cit230_image_franklinOriginal.jpeg" alt="Sunny Day in Preston">
+                                
                         </div>                         
                             <section class="weathersummary">
                                 <h3>Weather Summary</h3>
@@ -90,7 +91,9 @@
 
             </aside>
             <footer>
-                    <p>&copy; 2019 All Rights Reserved | Perfect Weather | Current Date Placeholder</p>
+                    <p>&copy; 2019 All Rights Reserved | Perfect Weather | <span id="currentdate"></span></p>
             </footer>
+                <script src="scripts/hamburger.js"></script>
+                <script src="scripts/currentdate.js"></script>
         </body>
  </html>       

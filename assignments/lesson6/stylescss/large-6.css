@@ -1,8 +1,11 @@
 @media only screen and (min-width: 45em) 
 {
-    nav .button {
+    nav button {
         display: none;
     }
+
+    nav ul.hide 
+    { display: block; }
     
     nav ul li {
         display: inline-block;
