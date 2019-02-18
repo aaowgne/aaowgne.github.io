@@ -100,7 +100,7 @@ ul li  {
     
     margin: 10px auto;        
     width: 100%;
-    height: 400px;
+    height: auto;
     padding: .5rem;
   }
   .weathersummary {
@@ -110,7 +110,7 @@ ul li  {
       background-color: #78c091;
       padding: .5rem;
       box-shadow: 0 0 30px #777;
-
+      
   }
   h3 {
     text-align: center;
@@ -143,4 +143,8 @@ ul li  {
     color: white;
     }
 
-
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
