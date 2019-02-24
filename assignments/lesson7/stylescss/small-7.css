@@ -112,6 +112,27 @@ ul li  {
       box-shadow: 0 0 30px #777;
       
   }
+
+  div.weatherGallery {
+    padding: 0 2%;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+}
+
+div.weatherGallery figure {
+    margin: 1rem 0;
+}
+
+div.weatherGallery figure img {
+    width: 100%;
+}
+
+div.weatherGallery figure figcaption {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 2% 1%;
+}
+
   h3 {
     text-align: center;
   }

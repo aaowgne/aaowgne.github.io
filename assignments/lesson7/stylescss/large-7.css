@@ -1,4 +1,4 @@
-@media only screen and (min-width: 45em) 
+@media only screen and (min-width: 64em) 
 {
     nav button {
         display: none;
@@ -23,6 +23,17 @@
         max-width: 1000px;
         margin: auto;
     }
+
+    div.weatherGallery {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1500px;
+        margin: auto;
+    }
+    div.weatherGallery figure:hover {
+        box-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+    }
+
+}
     
     
     section.forecast {   

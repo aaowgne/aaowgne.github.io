@@ -1,0 +1,5 @@
+@media only screen and (min-width: 45em) {
+    div.weatherGallery {
+        grid-template-columns: repeat(2, 49%);
+        grid-gap: 2%;
+    }
