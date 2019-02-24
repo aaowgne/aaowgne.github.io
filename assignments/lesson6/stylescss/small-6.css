@@ -142,7 +142,11 @@ ul li  {
     padding: .5rem;
     color: white;
     }
-
+    div#map {
+        width: 400px; height: 300px;
+        margin: auto;
+    }
+    
     .clearfix:after {
         content: "";
         display: table;
