@@ -48,10 +48,10 @@
                             <section class="weathersummary">
                                 <h3>Weather Summary</h3>
                                 <p>Currently: <span></span>Snow</p>
-                                <p>Temperature: <span></span>24 &deg;F</p>
+                                <p>Temperature: <span id="currentTemp">24</span> &deg;F</p>
                                 <p>Forecast Low: <span></span>13 &deg;F</p>
-                                <p>Wind: <span></span>NW at 9 MPH</p>
-                                <p>Wind Chill: <span></span>NW</p>                          
+                                <p>Wind Speed: <span id="windSpeed">9</span> MPH</p>
+                                <p>Wind Chill: <span id="windChill"></span>&deg;F</p>                          
                             </section>
                         </div>
                         <section class="forecast">
@@ -102,6 +102,7 @@
             </footer>
                 <script src="scripts/hamburger.js"></script>
                 <script src="scripts/currentdate.js"></script>
+                <script src="scripts/windchill.js"></script>
                 <script src="scripts/map.js"></script>
                 <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
                 
