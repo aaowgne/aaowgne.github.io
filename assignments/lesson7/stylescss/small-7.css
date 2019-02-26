@@ -8,10 +8,12 @@ background-color: #78c091;
 text-align: center;
 padding: .5rem;
 color: white;
+display: flex;
+justify-content: center;
 
 }
 header > img {
-width: 150px;
+width: 220px;
 height: auto;
 vertical-align: middle;
 
@@ -60,13 +62,15 @@ nav ul.hide {
     display: none;}
 
 ul li  {
+    display: flex;
+    flex-flow: row wrap;
     padding: 40px 16px;    
     border-bottom: 1px solid #ddd;
     background-color: #74b3ce;
     font-size: 2rem;       
     text-align: center;
     list-style-type: none;
-          
+    justify-content: center;     
   }
   a:link {
     color: white;
@@ -163,10 +167,11 @@ div.weatherGallery figure figcaption {
     text-align: center;
     padding: .5rem;
     color: white;
+    
     }
     div#map image{
-        display: block;
-        width: 300px; height: 200px;
+        display: inline-flex;
+        width: 100px; height: 50px;
         margin: 10px;        
         float: right;
     }
