@@ -164,9 +164,11 @@ div.weatherGallery figure figcaption {
     padding: .5rem;
     color: white;
     }
-    div#map {
-        width: 400px; height: 300px;
-        margin: auto;
+    div#map image{
+        display: block;
+        width: 300px; height: 200px;
+        margin: 10px;        
+        float: right;
     }
     
     .clearfix:after {
