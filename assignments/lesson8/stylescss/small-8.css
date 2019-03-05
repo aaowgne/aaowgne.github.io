@@ -166,8 +166,7 @@ div.weatherGallery figure figcaption {
   form#userReport {
     margin: 1em 3%;
 }
-fieldset {
-    border-radius: .3em;
+fieldset {   
     margin: 1.5em 0;
     border: #79B473 solid 5px;
 }
@@ -177,8 +176,7 @@ legend {
     color: #fff;
     padding: .5em;
     border: darkblue solid 1px;
-    background-color: #74b3ce;
-    border-radius: .3em;
+    background-color: #74b3ce;   
 }
 label {
     display: block;
@@ -195,8 +193,7 @@ label span {
 input.submitBtn {
     -webkit-appearance: none; 
     color: #fff;
-    border: solid 1px darkblue;
-    border-radius: 7px;
+    border: solid 1px darkblue;   
     margin: .5em 0;
     font-size: 1em;
     padding: .6em;
@@ -214,8 +211,7 @@ input.submitBtn {
     position: relative;
     padding-left: 35px;
     margin-bottom: 12px;
-    cursor: pointer;
-    
+    cursor: pointer;    
     font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
