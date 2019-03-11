@@ -245,6 +245,21 @@ label span.dangerAnswer {
     border-radius: 50%;
     background: white;
 }
+article#homeTowns {
+  border: none;
+  background-image: none;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 3%;
+  max-width: 1000px;  
+  margin-top: 30px;
+  padding: 20px 30px;
+}
+  article#homeTowns img {
+    height: 220px;
+    width: 220px;
+}
 
 
 
@@ -257,7 +272,7 @@ label span.dangerAnswer {
     }
     div#map image{
         display: inline-flex;
-        width: 100px; height: 50px;
+        width: 50px; height: 20px;
         margin: 10px;        
         float: right;
     }
