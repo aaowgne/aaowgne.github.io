@@ -72,6 +72,7 @@ ul li  {
     list-style-type: none;
     justify-content: center;     
   }
+  
   a:link {
     color: white;
     text-decoration: none;
@@ -89,6 +90,7 @@ ul li  {
     text-decoration: none;
     background-color: #915071;
   }
+  
   h1{
     text-align: center;
     color: darkblue;  
