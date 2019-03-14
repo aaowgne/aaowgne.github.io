@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Weather page Lyghtning Strykes">
+        <title>Lyghtning Strykes | Gallery | Weather Conditions and Forecast</title>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather%7cRoboto" rel="stylesheet">
+        <link rel="stylesheet" href="stylescss/normalize.css">
+        <link href="stylescss/small-8.css" rel="stylesheet">
+        <link href="stylescss/medium-8.css" rel="stylesheet">
+        <link href="stylescss/large-8.css" rel="stylesheet">        
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    </head>
+        <body>
+            <header class="clearfix">
+                <img src="images/if_weather-clear_118959.png" alt="Lyghtning Strykes Logo">
+                <div class="headertext">
+                    <h1>Lyghtning Strykes</h1>
+                <div class="motto">Duck and Cover</div>
+                </div>
+                <div class="currentconditions">
+                    <img src="images/if_weather-storm_118967.png" alt="current condition weather icon">
+                    <p>Stormy</p>
+                </div>
+            </header>
+            <nav class="clearfix">
+                <button onclick="toggleNavMenu()">&#9776;</button>  
+                <ul id="primaryNav" class="hide">
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="preston-9.html">Preston</a></li>
+                    <li><a href="sodasprings.html">Soda Springs</a></li>
+                    <li><a href="fishhaven.html">Fish Haven</a></li>
+                    <li><a href="stormcenter.html">Storm Center</a></li>
+                    <li><a href="gallery-9.html">Gallery</a></li>
+                </ul>
+            </nav>
+            <main class="gallerystyle">
+                    <h2>Gallery</h2>
+                    <div class="weatherGallery">
+                        <figure>
+                            <img src="images/lightning.jpg" alt="Lightning">
+                            <figcaption>Mountain Lightning Strike</figcaption>
+                        </figure>
+            
+                        <figure>
+                            <img src="images/mountains.jpg" alt="Mountain Picture">
+                            <figcaption>Mountain Landscape</figcaption>
+                        </figure>
+            
+                        <figure>
+                            <img src="images/rockytrail.jpg" alt="Rockslide">
+                            <figcaption>Rockslide</figcaption>
+                        </figure>
+            
+                        <figure>
+                            <img src="images/fish.jpg" alt="Trout in a Stream">
+                            <figcaption>Rainbow Trout</figcaption>
+                        </figure>
+            
+                        <figure>
+                            <img src="images/starrymtn.jpg" alt="Starry Mountain">
+                            <figcaption>Starry Mountains</figcaption>
+                        </figure>
+            
+                        <figure>
+                            <img src="images/cougar.jpg" alt="Cougar">
+                            <figcaption>Cougar</figcaption>
+                        </figure>
+                    </div>
+                </main>
+
+            <footer>
+                    <aside>                        
+                        <div id="map">
+                            <img src="images/theMap.jpg" alt="The Map">  
+                    </div><br>
+                    </aside>
+                    <p>&copy; 2019 All Rights Reserved | Perfect Weather | <span id="currentdate"></span></p>
+            </footer>
+                <script src="scripts/hamburger.js"></script>
+                <script src="scripts/currentdate.js"></script>
+                <script src="scripts/map.js"></script>
+                <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+                
+        </body>
+ </html>       
