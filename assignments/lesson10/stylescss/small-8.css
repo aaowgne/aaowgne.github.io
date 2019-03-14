@@ -267,22 +267,24 @@ article#homeTowns {
 
   footer{
     background-color: #78c091;
-    text-align: center;
+    text-align: center;        
     padding: .5rem;
     color: white;
+    height: 230px;
     
     }
-    div#map image{
-        display: inline-flex;
-        width: 50px; height: 20px;
+    div#map img{        
+        display: block;        
+        width: 200px; height: 200px;
         margin: 10px;        
         float: right;
     }
     
     .clearfix:after {
         content: "";
-        display: table;
+        display: inline-flex;
         clear: both;
+        
     }
     
    
