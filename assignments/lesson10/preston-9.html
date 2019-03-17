@@ -47,11 +47,11 @@
                         </div>                         
                             <section class="weathersummary">
                                 <h3>Weather Summary</h3>
-                                <p>Currently: <span></span>Snow</p>
-                                <p>Temperature: <span id="currentTemp">24</span> &deg;F</p>
-                                <p>Forecast Low: <span></span>13 &deg;F</p>
-                                <p>Wind Speed: <span id="windSpeed">9</span> MPH</p>
-                                <p>Wind Chill: <span id="windChill"></span>&deg;F</p>                          
+                                <p>Currently: <span id="weatherDesc"></span></p>
+                                <p>Temperature: <span id="currentTemp"></span> &deg;F</p>
+                                <p>Humidity: <span id="humidity"></span>%</p>
+                                <p>Wind Speed: <span id="windSpeed"></span> MPH</p>
+                                <p>Wind Chill: <span id="windChill"></span>&deg;</p>                          
                             </section>
                         </div>
                         <section class="forecast">
@@ -59,20 +59,20 @@
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th><span id="dayone">Monday</span></th>
-                                            <th><span id="daytwo">Tuesday</span></th>
-                                            <th><span id="daythree">Wednesday</span></th>
-                                            <th><span id="dayfour">Thursday</span></th>
-                                            <th><span id="dayfive">Friday</span></th>
+                                            <th><span id="dayone"></span></th>
+                                            <th><span id="daytwo"></span></th>
+                                            <th><span id="daythree"></span></th>
+                                            <th><span id="dayfour"></span></th>
+                                            <th><span id="dayfive"></span></th>
                                         </tr>
                                     </thead>
                                 <tbody>
                                     <tr>
-                                        <td><img src="images/if_weather-clear_118959.png"  alt="Weather Image"><br>High <span id="dayonetemp"></span>32&deg;F</td>
-                                        <td><img src="images/if_weather-clear_118959.png"  alt="Weather Image"><br>High <span id="daytwotemp"></span>33&deg;F</td>
-                                        <td><img src="images/if_weather-clear_118959.png"  alt="Weather Image"><br>High <span id="daythreetemp"></span>34&deg;F</td>
-                                        <td><img src="images/if_weather-clear_118959.png"  alt="Weather Image"><br>High <span id="dayfourtemp"></span>35&deg;F</td>
-                                        <td><img src="images/if_weather-clear_118959.png"  alt="Weather Image"><br>High <span id="dayfivetemp"></span>36&deg;F</td>
+                                        <td><img src="#" id="weather_icon1"  alt="Weather Image"><br><span id="dayonetemp"></span>&deg;F</td>
+                                        <td><img src="#" id="weather_icon2"  alt="Weather Image"><br><span id="daytwotemp"></span>&deg;F</td>
+                                        <td><img src="#" id="weather_icon3"  alt="Weather Image"><br><span id="daythreetemp"></span>&deg;F</td>
+                                        <td><img src="#" id="weather_icon4"  alt="Weather Image"><br><span id="dayfourtemp"></span>&deg;F</td>
+                                        <td><img src="#" id="weather_icon5"  alt="Weather Image"><br><span id="dayfivetemp"></span>&deg;F</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -112,6 +112,7 @@
                 <script src="scripts/windchill.js"></script>
                 <script src="scripts/map.js"></script>
                 <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+                <script src="scripts/preston.js"></script>
                 
         </body>
  </html>       
