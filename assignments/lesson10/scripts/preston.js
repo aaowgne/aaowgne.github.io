@@ -17,7 +17,7 @@ weatherRequest.onload = function () {
 }
 
 var weatherForecast = new XMLHttpRequest
-weatherForecast.open('GET', 'https://api.openweathermap.org/data/2.5/weather?id=5604473&appid=7678dcb5254e28a8d18dc92acad6101c&units=imperial', true);
+weatherForecast.open('GET', 'https://api.openweathermap.org/data/2.5/forecast?id=5604473&appid=7678dcb5254e28a8d18dc92acad6101c&units=imperial', true);
 weatherForecast.send();
 weatherForecast.onload = function () {
 
