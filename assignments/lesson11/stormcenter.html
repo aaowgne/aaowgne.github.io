@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Weather page Lyghtning Strykes">
+        <title>Lyghtning Strykes | Storm Center | Weather Conditions and Forecast</title>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather%7cRoboto" rel="stylesheet">
+        <link rel="stylesheet" href="stylescss/normalize.css">
+        <link href="stylescss/small-8.css" rel="stylesheet">
+        <link href="stylescss/medium-8.css" rel="stylesheet">
+        <link href="stylescss/large-8.css" rel="stylesheet">        
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    </head>
+        <body>
+            <header class="clearfix">
+                <img src="images/if_weather-clear_118959.png" alt="Lyghtning Strykes Logo">
+                <div class="headertext">
+                    <h1>Lyghtning Strykes</h1>
+                <div class="motto">Duck and Cover</div>
+                </div>
+                <div class="currentconditions">
+                    <img src="images/if_weather-storm_118967.png" alt="current condition weather icon">
+                    <p>Stormy</p>
+                </div>
+            </header>
+            <nav class="clearfix">
+                <button onclick="toggleNavMenu()">&#9776;</button>  
+                <ul id="primaryNav" class="hide">
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="preston-9.html">Preston</a></li>
+                    <li><a href="sodasprings.html">Soda Springs</a></li>
+                    <li><a href="fishhaven.html">Fish Haven</a></li>
+                    <li><a href="stormcenter.html">Storm Center</a></li>
+                    <li><a href="gallery-9.html">Gallery</a></li>
+                </ul>
+            </nav>
+            <main>
+                <h1>Report a Storm</h2>
+                        <form action="thanks.html" method="get" enctype="multipart/form-data" name="storm" id="userReport">
+                            <fieldset>
+                                <legend><span>Contact Information</span></legend>
+                                <label><span>Full Name:</span><input name="fullname" type="text" value="" placeholder="Full Name" pattern="[a-zA-Z -._]{5,99}" required ></label>
+                                <label><span>Email:</span><input name="email" type="email" value="" placeholder="example@email.com" ></label>
+                                <label><span>Phone:</span><input name="phone" type="tel" value="" placeholder="2085551234" pattern="[0-9]{10,20}" required ></label>
+                                <label><span>Zip Code:</span><input name="zip" type="number" required></label>
+                            </fieldset>
+                            <fieldset>
+                                <legend><span>Storm Information</span></legend>
+                                <label><span>Storm Date:</span><input name="date" type="date" ></label>
+                                <label><span>Storm Type:</span><input type="text" name="stormType" list="storms">
+                                    <datalist id="storms">
+                                        <option value="Flash Flood"></option>
+                                        <option value="Hail"></option>
+                                        <option value="Hurricane"></option>
+                                        <option value="Thunderstorm"></option>
+                                        <option value="Tornado"></option>
+                                    </datalist>
+                                </label>
+                                <label><span>Storm Severity (1 to 10):</span><span id="ratingvalue">5</span><input type="range" id="rating" value="5" min="1" max="10" step="1" oninput="adjustRating(this.value)" onchange="adjustRating(this.value)"></label>
+                                <label><span>Storm Region:</span><select name="region">
+                                        <option value="select" disabled selected>Select Region</option>
+                                        <option value="preston">Preston</option>
+                                        <option value="sodasprings">Soda Springs</option>
+                                        <option value="fishhaven">Fish Haven</option>
+                                    </select></label>
+                                <label><span>Are You Currently in Danger:</span></label>
+                                <label class="container"><span class="dangerAnswer">Yes</span>
+                                        <input type="radio" checked="checked" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container"><span class="dangerAnswer">Maybe</span>
+                                        <input type="radio" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container"><span class="dangerAnswer">No</span>
+                                        <input type="radio" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                            </fieldset>
+                            <fieldset>
+                                <legend><span>Additional Information:</span></legend>
+                                <textarea name="comments" rows="10" cols="40"></textarea>
+                            </fieldset>
+    
+                            <input type="submit" value="Submit" class="submitBtn">
+                            <input name="redirect" type="hidden" value="thanks.html">
+                        </form>
+            </main>
+
+            <footer>
+                <aside>                        
+                    <div id="map">
+                        <img src="images/theMap.jpg" alt="The Map">  
+                </div><br>
+                </aside>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>&copy; 2019 All Rights Reserved | Perfect Weather | <span id="currentdate"></span></p>
+        </footer>
+            <script src="scripts/hamburger.js"></script>
+            <script src="scripts/currentdate.js"></script>
+            <script src="scripts/map.js"></script>
+            <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+            <script src="scripts/rating.js"></script>
+    </body>
+</html>       

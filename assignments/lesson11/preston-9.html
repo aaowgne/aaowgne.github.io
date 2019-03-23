@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Weather page Lyghtning Strykes">
+        <title>Lyghtning Strykes | Town of Preston | Weather Conditions and Forecast</title>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather%7cRoboto" rel="stylesheet">
+        <link rel="stylesheet" href="stylescss/normalize.css">
+        <link href="stylescss/small-8.css" rel="stylesheet">
+        <link href="stylescss/medium-8.css" rel="stylesheet">
+        <link href="stylescss/large-8.css" rel="stylesheet">        
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    </head>
+        <body>
+            <header class="clearfix">
+                <img src="images/if_weather-clear_118959.png" alt="Lyghtning Strykes Logo">
+                <div class="headertext">
+                    <h1>Lyghtning Strykes</h1>
+                <div class="motto">Duck and Cover</div>
+                </div>
+                <div class="currentconditions">
+                    <img src="images/if_weather-storm_118967.png" alt="current condition weather icon">
+                    <p>Stormy</p>
+                </div>
+            </header>
+            <nav class="clearfix">
+                <button onclick="toggleNavMenu()">&#9776;</button>  
+                <ul id="primaryNav" class="hide">
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="preston-9.html">Preston</a></li>
+                    <li><a href="sodasprings.html">Soda Springs</a></li>
+                    <li><a href="fishhaven.html">Fish Haven</a></li>
+                    <li><a href="stormcenter.html">Storm Center</a></li>
+                    <li><a href="gallery-9.html">Gallery</a></li>
+                </ul>
+            </nav>
+            <main class="clearfix">
+                    <h1>Preston City</h1>
+                    <div class="hero">
+                        
+                        <div class="hero-ph"> <img src="images/cit230_image_franklinOriginal1100.jpg" alt="Sunny Day in Preston" sizes="100vw"
+                            srcset="images/cit230_image_franklinOriginal500.jpg 480w,
+                                    images/cit230_image_franklinOriginal800.jpg 780w,
+                                    images/cit230_image_franklinOriginal1100.jpg 1080w">
+                               
+                        </div>                         
+                            <section class="weathersummary">
+                                <h3>Weather Summary</h3>
+                                <p>Currently: <span id="weatherDesc"></span></p>
+                                <p>Temperature: <span id="currentTemp"></span> &deg;F</p>
+                                <p>Humidity: <span id="humidity"></span>%</p>
+                                <p>Wind Speed: <span id="windSpeed"></span> MPH</p>
+                                <p>Wind Direction: <span id="windDirection"></span></p>
+                                <p>Wind Chill: <span id="windChill"></span>&deg;</p>                          
+                            </section>
+
+                        </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                        <section class="forecast">
+                                <h1>5 Day Forecast</h1>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th><span id="dayone"></span></th>
+                                            <th><span id="daytwo"></span></th>
+                                            <th><span id="daythree"></span></th>
+                                            <th><span id="dayfour"></span></th>
+                                            <th><span id="dayfive"></span></th>
+                                        </tr>
+                                    </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="#" id="weather_icon1"  alt="Weather Image"><br><span id="dayonetemp"></span>&deg;F</td>
+                                        <td><img src="#" id="weather_icon2"  alt="Weather Image"><br><span id="daytwotemp"></span>&deg;F</td>
+                                        <td><img src="#" id="weather_icon3"  alt="Weather Image"><br><span id="daythreetemp"></span>&deg;F</td>
+                                        <td><img src="#" id="weather_icon4"  alt="Weather Image"><br><span id="dayfourtemp"></span>&deg;F</td>
+                                        <td><img src="#" id="weather_icon5"  alt="Weather Image"><br><span id="dayfivetemp"></span>&deg;F</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    <article>
+                        <h3>Snowfall Makes for Treacherous Driving</h3>
+                            <p class="snowart">
+                                <img src="https://images.pexels.com/photos/1855221/pexels-photo-1855221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Snowy Road">
+                                Conditions proved to be challenging for drivers yesterday as the storm dropped anywhere from 6-14 inches of fresh snow throughout the state.<br>
+                                Idaho State Police reported 345 crashes before 5 PM and that total is sure to increase as snowfall continued into the evening.<br>
+                                Snow plows were on the roads for over 24 hours, and while they are working hard to clear every road, it may take several days to reach every side street.<br>
+                                Thankfully there is a positive outlook concerning the weather. Sunny skies, along with temperatures that will reach above freezing are in store for the next five days.<br>
+
+                            </p>
+
+                            <h1>Highlights of Preston Events</h1>
+                    </article>
+                    <article id="prestonEvents">
+                    <h6>Weather Data Provided Through OpenWeatherMap</h6>
+                    
+                    <div class="towns">  
+                             
+                                
+                               
+                    </div>
+                  
+
+                    </article>
+            </main>
+            
+            <footer class="clearfix">
+                    <aside>                        
+                        <div id="map">
+                                <img src="images/theMap.jpg" alt="The Map">  
+                        </div><br>
+                    </aside>
+                    <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                    <p>&copy; 2019 All Rights Reserved | Perfect Weather | <span id="currentdate"></span></p>
+            </footer>
+                <script src="scripts/hamburger.js"></script>
+                <script src="scripts/currentdate.js"></script>
+                <script src="scripts/windchill.js"></script>
+                <script src="scripts/map.js"></script>
+                <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+                <script src="scripts/preston.js"></script>
+                
+                
+        </body>
+ </html>       

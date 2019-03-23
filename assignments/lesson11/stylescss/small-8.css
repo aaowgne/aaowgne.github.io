@@ -1,0 +1,290 @@
+body{
+    font-family: 'Merriweather', serif;
+font-family: 'Roboto', sans-serif;
+font-size: 18px;
+}
+header{
+background-color: #78c091;
+text-align: center;
+padding: .5rem;
+color: white;
+display: flex;
+justify-content: center;
+
+}
+header > img {
+width: 220px;
+height: auto;
+vertical-align: middle;
+
+}
+.headertext {
+    display: inline-block;
+    vertical-align: middle;
+
+}
+.headertext h1{
+    font-size: 3rem;
+
+}
+.motto{
+    font-size: 1.9rem;
+    color:black;
+    font-style: italic;
+
+}
+.currentconditions{
+    display: inline-block;
+    margin: 1rem 0 1rem 5rem;
+    padding: 1.2rem;
+    vertical-align: middle;
+    color: white;
+    background-color: blue;
+    border: 1pt solid black;
+    font-size: 1.1rem;
+
+}
+.currentconditions img {
+    width: 90px;
+    height: auto;
+
+
+}
+nav button {
+    margin: .2rem 2%;
+    background-color: black;
+    border: none;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+nav ul.hide {
+    display: none;}
+
+ul li  {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 40px 16px;    
+    border-bottom: 1px solid #ddd;
+    background-color: #74b3ce;
+    font-size: 2rem;       
+    text-align: center;
+    list-style-type: none;
+    justify-content: center;     
+  }
+  
+  a:link {
+    color: white;
+    text-decoration: none;
+  }
+  a:visited {
+    color: green;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    text-decoration: none;
+  }
+  a:active {
+    color: black;
+    text-decoration: none;
+    background-color: #915071;
+  }
+  
+  h1{
+    text-align: center;
+    color: darkblue;  
+  }
+  h2 {
+    text-align: center;  
+  }
+
+  div.hero {
+    margin: 10px auto;
+    position: relative;    
+    width: 100%;
+    height: 400px;
+    padding: .5rem;
+  }
+
+  .hero-ph > img { 
+    
+    margin: 10px auto;        
+    width: 100%;
+    height: auto;
+    padding: .5rem;
+  }
+  .weathersummary {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      background-color: #78c091;
+      padding: .5rem;
+      box-shadow: 0 0 30px #777;
+      
+  }
+
+  div.weatherGallery {
+    padding: 0 2%;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+}
+
+div.weatherGallery figure {
+    margin: 1rem 0;
+}
+
+div.weatherGallery figure img {
+    width: 100%;
+}
+
+div.weatherGallery figure figcaption {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 2% 1%;
+}
+
+  h3 {
+    text-align: center;
+  }
+  section.forecast {
+    display: none; 
+  
+  }
+  .snowart img {
+  display: block;
+  
+  width: 300px;
+  height: 300px;  
+  margin: 10px;
+  border-bottom: 20px;
+}
+  .snowart {
+      display: block;
+      text-align: left;
+      text-indent: 20px; 
+  }
+  
+  form#userReport {
+    margin: 1em 3%;
+}
+fieldset {   
+    margin: 1.5em 0;
+    border: #79B473 solid 5px;
+}
+legend {
+    font-family: "Merriweather", sans-serif;
+    font-size: 1.2em;
+    color: #fff;
+    padding: .5em;
+    border: darkblue solid 1px;
+    background-color: #74b3ce;   
+}
+label {
+    display: block;
+    margin: .5em;
+}
+label span {
+    font-family: "Merriweather", sans-serif;
+    display: block;
+    font-size: 1.2em;
+    color: green;
+    padding-top: .9em;
+    padding-bottom: .2em;
+}
+input.submitBtn {
+    -webkit-appearance: none; 
+    color: #fff;
+    border: solid 1px darkblue;   
+    margin: .5em 0;
+    font-size: 1em;
+    padding: .6em;
+    background: #197BBD;    
+    font-family: "Merriweather", sans-serif;
+    font-size: 1.5em; 
+    box-shadow: 4px 4px 10px #74b3ce;
+    }
+
+
+/*----Radio Buttons----*/
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;    
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+label span.dangerAnswer {
+    padding-top: .2em;
+    font-size: .9em;
+}
+
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+.container .checkmark:after {
+    top: 9px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+}
+article#homeTowns {
+  border: none;
+  background-image: none;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 3%;
+  max-width: 1000px;  
+  margin-top: 30px;
+  padding: 20px 30px;
+}
+  article#homeTowns img {
+    height: 220px;
+    width: 220px;
+}
+
+
+
+  footer{
+    background-color: #78c091;
+    text-align: center;        
+    padding: .5rem;
+    color: white;
+    height: 230px;
+    
+    }
+    div#map img{        
+        display: block;        
+        width: 200px; height: 200px;
+        margin: 10px;        
+        float: right;
+    }
+    
+    .clearfix:after {
+        content: "";
+        display: inline-flex;
+        clear: both;
+        
+    }
+    
+   
