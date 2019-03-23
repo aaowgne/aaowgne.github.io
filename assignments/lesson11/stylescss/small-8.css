@@ -64,7 +64,7 @@ nav ul.hide {
 ul li  {
     display: flex;
     flex-flow: row wrap;
-    padding: 40px 16px;    
+    padding: 40px 20px;    
     border-bottom: 1px solid #ddd;
     background-color: #74b3ce;
     font-size: 2rem;       
