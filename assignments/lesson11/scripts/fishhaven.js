@@ -16,6 +16,45 @@ weatherRequest.onload = function () {
     windChill = Math.round(windChill);
     document.getElementById("windChill").innerHTML = windChill;
     
+    let d = [weatherData.wind.deg];
+    let dir = "";
+    
+    /*Convert degrees to direction*/
+    
+    if ((d >= 337 && d <= 360) || (d >=0 && d <= 22)) {
+    dir ="N";
+    }
+    
+    else if (d >= 23 && d <= 67) {
+    dir ="NE";
+    }
+    
+    else if (d >= 68 && d <= 112) {
+    dir ="E";
+    }
+    
+    else if (d >= 113 && d <= 157) {
+    dir ="SE";
+    }
+    
+    else if (d >= 158 && d <= 202) {
+    dir ="S";
+    }
+    
+    else if (d >= 203 && d <= 246) {
+    dir ="SW";
+    }
+    
+    else if (d >= 247 && d <= 290) {
+    dir ="W";
+    }
+    
+    else dir = "NW"
+    
+    /*Define span id of 'direction' and get element from variable 'dir'*/
+    
+    document.getElementById("windDirection").textContent=dir;
+    
 }
 
 var weatherForecast = new XMLHttpRequest
