@@ -32,17 +32,17 @@ function showData(jsonObj) {
 
         if (name.includes("Preston")) {
             myPhoto.src = 'images/napoleon-dynamites-house-yt.png'
-        
+            myArticle.style.order = "1";
         }
 
         if (name.includes("Soda Springs")) {
             myPhoto.src = 'images/mountains.jpg'
-        
+            myArticle.style.order = "2";
         }
 
         if (name.includes("Fish Haven")) {
             myPhoto.src = 'images/fish.jpg'
-        
+            myArticle.style.order = "3";
         }
 
                 
