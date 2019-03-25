@@ -1,3 +1,6 @@
+@media only screen and (min-width: 28em) {
+}
+
 body{
     font-family: 'Merriweather', serif;
 font-family: 'Roboto', sans-serif;
@@ -96,7 +99,8 @@ ul li  {
     color: darkblue;  
   }
   h2 {
-    text-align: center;  
+    text-align: center; 
+     
   }
 
   div.hero {
@@ -146,6 +150,7 @@ div.weatherGallery figure figcaption {
 
   h3 {
     text-align: center;
+    color: darkblue; 
   }
   section.forecast {
     display: none; 
