@@ -1,82 +1,160 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 
     <title>Rock, Paper, Scissors</title>
-
-    <style>
-       *{margin:0;padding:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}::selection{background:#fb9fe5;text-shadow:none}a{color:#0088CC;text-decoration:none;outline:0}a:hover{color:#005580}a img{border:none}img{max-width:100%}html{font-size:100%}body{padding:5%;font:300 1.25em/1.6 monospace;background:#fff;color:#000;}h1{font-family:"Helvetica Neue",sans-serif;line-height:1;font-weight:300;margin-bottom:1em;}.game{padding:2em;background:#eee;}
-    </style>
+    <link href="game.css" rel="stylesheet">
+    
 </head>
 <body>
 
-<h1>Rock, Paper, Scissors</h1>
+    <div class="container">
 
-<div class="game">
+        <h1>Select Your Choice</h1>
+      
+        <div class="button-row">
+          <button class="rock btn">Rock</button>
+          <button class="paper btn">Paper</button>
+          <button class="scissors btn">Scissors</button>
+        </div>
+      
+        <div class="game-message-placement">
+          <div id="game-message">
+      
+          </div>
+        </div>
+        <!-- end of game-message-placement div -->
+        
+        <div class="scoreboard-placement">
+          <div id="scoreboard">
+            <p class="scoreboard-row" id="playerWins"><strong>Total Wins: </strong><span id="wins">0</span></p>
+            <p class="scoreboard-row" id="playerDraws"><strong>Total Ties:  </strong><span id="draws">0</span></p>
+            <p class="scoreboard-row" id="playerLosses"><strong>Total Losses: </strong><span id="losses">0</span></p>
+          </div>
+        </div><!-- end of scoreboard-placement -->
+        
+        <p id="reset-scores">Start Over</p>
+        
+      </div>
+      <script>
+        var playerWin = 0;
+        var aiWin = 0;
+        var draws = 0;
+        var playerRoll; //rock = 1, paper = 2, scissors = 3
+        var gameMessage = game-message;
+        var scoreBoard = scoreboard;
+        
+        
+        //rock click
+        function onclick(rock)
+          playerRoll = 1;
+          var computerRoll = Math.floor(Math.random() * 3 + 1);
+          
+          //draw case
+          if (computerRoll === playerRoll) {
+            return (gameMessage);
+            document.getElementById.innerHTML = game-message, "Draw!" + "The Computer chose rock too!";
+           
+              
+              draws++;
+              document.getelementById(playerDraws).innerHTML = draws;
+                         }            
+            // rock vs AI paper
+           else if (playerRoll === 1 && computerRoll === 2) {
+            return (gameMessage);document.getElementById.innerHTML = game-message, "You Lost!" + "The Computer chose Paper!";
+            
+              aiWin++;
+              document.getElementById("aiWin");
+            }
+            
+            // rock vs AI scissors
+           else {
+            return (gameMessage);document.getElementById.innerHTML = game-message, "You Won!" + "The Computer chose Scissors!";                        
+              
+              document.getElementById("playerWins");
+              playerWin++;
+            }         
+                           
+                
+        //paper click
+        function onclick(paper)
+          playerRoll = 2;
+          var computerRoll = Math.floor(Math.random() * 3 + 1);
+          
+          //draw
+          if (computerRoll === playerRoll) {
+            return (gameMessage);
+            document.getElementById.innerHTML = game-message, "Draw!" + "The Computer chose paper too!"; 
+              
+              draws++;
+              document.getelementById(playerDraws).innerHTML = draws;
+             
+            }
+          //paper vs AI rock
+           else if (playerRoll === 2 && computerRoll === 1) {
+            return (gameMessage);
+            document.getElementById.innerHTML = game-message, "You Won!" + "The Computer chose Rock!";
+                          
+              playerWin++;
+              document.getElementById("playerWins"); 
+            }
+          //paper vs AI scissors
+           else {
+            return (gameMessage);document.getElementById.innerHTML = game-message, "You Lost!" + "The Computer chose Scissors!";
+                            
+              aiWin++;
+              document.getElementById("aiWin");
+            }
+                    
+                          
+        //scissors click
+        function onclick(scissors)
+          playerRoll = 3;
+          var computerRoll = Math.floor(Math.random() * 3 + 1);
+          //draw
+          if (computerRoll === playerRoll) {
+            return (gameMessage);
+            document.getElementById.innerHTML = game-message, "Draw!" + "The Computer chose Scissors too!";
+                            
+              draws++;
+              document.getelementById(playerDraws).innerHTML = draws;
+             
+            }
+          //scissors vs AI paper
+           else if (playerRoll === 3 && computerRoll === 2) {
+            return (gameMessage);
+            document.getElementById.innerHTML = game-message, "You Won!" + "The Computer chose Paper!";
+              
+              
+              playerWin++;
+              document.getElementById("playerWins");
+            }
+          //scissors vs AI rock
+           else {
+            return (gameMessage);document.getElementById.innerHTML = game-message, "You Lost!" + "The Computer chose Rock!";
+              
+              aiWin++;
+              document.getElementById("aiWin");
+            }
+          
+          
+          
+        
+        
+        //press "Start Over" to reset all scores
+        function onclick(reset){
+          playerWin = 0;
+          document.getElementById("playerWins");
 
-    <script>
-        // User choice
-        var userChoice = prompt("Do you choose rock, paper or scissors?");
-        if (! userChoice) {
-            // User choice was undefined
-            document.write("<p>Player 1, you cheated! Refresh this screen and fight like a man.</p>");
-        } else {
-            // Display user choice
-            document.write("<p>Player 1:" + " " + userChoice + "</p>");
+          draws = 0;
+          document.getelementById(playerDraws).innerHTML = draws;
+
+          aiWin = 0;
+          document.getElementById("aiWin");
         }
-        // Computer choice
-        var computerChoice = Math.random();
-        if (computerChoice < 0.34) {
-            computerChoice = "rock";
-        } else if(computerChoice <= 0.67) {
-            computerChoice = "paper";
-        } else {
-            computerChoice = "scissors";
-        }
-        // Display computer choice
-        document.write("<p>Computer:" + " " + computerChoice + "</p>");
-        // Compare user choice vs computer choice
-        var compare = function(choice1,choice2) {
-            if (choice1 === choice2) {
-                return "It's a tie!";
-            }
-            if (choice1 === "rock") {
-                if (choice2 === "scissors") {
-                    // rock wins
-                    return "You win!";
-                } else {
-                    // paper wins
-                    return "You lose! Try again.";
-                }
-            }
-            if (choice1 === "paper") {
-                if (choice2 === "rock") {
-                    // paper wins
-                    return "You win!";
-                } else {
-                    // scissors wins
-                    return "You lose! Try again.";
-                }
-            }
-            if (choice1 === "scissors") {
-                if (choice2 === "rock") {
-                    // rock wins
-                    return "You lose! Try again.";
-                } else {
-                    // scissors wins
-                    return "You win!";
-                }
-            }
-        };
-        // Run the compare function
-        var results = compare(userChoice,computerChoice);
-        // Display results
-        document.write("<br><hr><br>" + results);
-    </script>
-
-</div>
-
-</body>
+      </script>
+ </body>
+     
 </html>
