@@ -30,9 +30,146 @@ header{
         font-style: italic;
     
     }
+    h1{
+        text-align: center;
+          
+      }
+      h2{
+        text-align: center;
+          
+      }
+    nav {
+        background-color: rgba(0,0,0,0.6);        
+        font-style: italic;
+    }
+    nav button {
+        margin: .7rem;
+        background-color: transparent;
+        border: none;
+        font-size: 1.9rem;
+        color: #190e4f;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    
+    }
+    nav ul li a {
+        display: flex;
+        flex-flow: row wrap;
+        padding: .8rem 5%;
+        text-decoration: none;
+        color: #190e4f;
+        border-top: 1px solid rgba(0,0,0,0.3);
+    }
+    nav ul li a:hover {background-color: #ea638c; color: #000;}
+    nav ul li.active a {background-color: #b33c86; color: #000;}
+    nav ul.hide {display: none;}
 
-
-
+    div.templeGallery {
+        padding: 0 2%;
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+    }
+    
+    div.templeGallery figure {
+        margin: 1rem 0;
+    }
+    
+    div.templeGallery figure img {
+        width: 100%;
+        height: auto;
+    }
+    
+    div.templeGallery figure figcaption {
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 2% 1%;
+    }
+    form#userReport {
+        margin: 1em 3%;
+        
+    }
+    fieldset {   
+        margin: 1.5em 0;
+        border: #03012c solid 5px;
+    }
+    legend {
+        
+        font-size: 1.2em;
+        color: white;
+        padding: .5em;
+        border: white solid 1px;
+        background-color: #190e4f;   
+    }
+    label {
+        display: block;
+        margin: .5em;
+    }
+    label span {
+        
+        display: block;
+        font-size: 1.2em;
+        color: #002a22;
+        padding-top: .9em;
+        padding-bottom: .2em;
+    }
+    input.submitBtn {
+        -webkit-appearance: none; 
+        color: #fff;
+        border: solid 1px darkblue;   
+        margin: .5em 0;
+        font-size: 1em;
+        padding: .6em;
+        background: #03012c;    
+        font-family: "Merriweather", sans-serif;
+        font-size: 1.5em; 
+        box-shadow: 4px 4px 10px darkblue;
+        }
+    
+    
+    /*----Radio Buttons----*/
+    
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;    
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    
+    label span.bedAnswer {
+        padding-top: .2em;
+        font-size: .9em;
+    }
+    
+    
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+    
+    
+    .container .checkmark:after {
+        top: 9px;
+        left: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: white;
+    }
 
     footer{
         background-color: #03012c;

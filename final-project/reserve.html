@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Temple Site Final Page">
+        <meta name="author" content="David Nielson | CIT 230 BYU-Idaho">
+        <title>Temple Inn Experience | A Site to Remember | Booking and Information</title>
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="smalltemples.css">
+        <link rel="stylesheet" href="medtemples.css">
+        <link rel="stylesheet" href="largetemples.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    </head>
+        <body>
+           <header>
+               <div class="temphead">
+            <img src="images/oaklandheader.jpg" alt="Oakland Temple"></div>
+            <div class="headertext">
+                <h1>Temple Inn Experience</h1>
+            <div class="motto">A Great Place For Every Occasion</div>
+            </div>
+            <div class="temphead">
+                <img src="images/oaklandheader.jpg" alt="Oakland Temple">
+                
+            </div>
+           </header> 
+           <nav>
+                <button onclick="toggleNavMenu()">&#9776;</button>
+                <ul class="hide mainmenu" id="primaryNav">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="temples.html">TEMPLES</a></li>                
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="receptions.html">RECEPTIONS</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="reserve.html">RESERVE NOW</a></li>
+                </ul>
+           </nav>
+           <main>
+                <h1>Reservation Information</h1>
+                <form action="confirm.html" method="get" enctype="multipart/form-data" name="temp" id="userReport">
+                    <fieldset>
+                        <legend><span>Contact Information</span></legend>
+                        <label><span>Full Name:</span><input name="fullname" type="text" value="" placeholder="Full Name" pattern="[a-zA-Z -._]{5,99}" required ></label>
+                        <label><span>Email:</span><input name="email" type="email" value="" placeholder="example@email.com" ></label>
+                        <label><span>Phone:</span><input name="phone" type="tel" value="" placeholder="2085551234" pattern="[0-9]{10,20}" required ></label>
+                        <label><span>Zip Code:</span><input name="zip" type="number" required></label>
+                        <label><span>State:</span><input name="state" type="state" ></label>
+                    </fieldset>
+                    <fieldset>
+                        <legend><span>Stay Information</span></legend>
+                        <label><span>Stay Date Begin:</span><input name="date" type="date" ></label>
+                        <label><span>Stay Date End:</span><input name="date" type="date" ></label>
+                        <label><span>Temple Choice:</span><input type="text" list="temples">
+                            <datalist id="temples">
+                                <option value="Logan"></option>
+                                <option value="Manti"></option>
+                                <option value="Salt Lake City"></option>
+                                <option value="Saint George"></option>                                
+                            </datalist>
+                        </label>
+                        
+                        <label><span>Do You Need A Roll Out Bed:</span></label>
+                        <label class="container"><span class="bedAnswer">Yes</span>
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container"><span class="bedAnswer">Maybe</span>
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container"><span class="bedAnswer">No</span>
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend><span>Additional Information:</span></legend>
+                        <textarea name="comments" rows="10" cols="40"></textarea>
+                    </fieldset>
+
+                    <input type="submit" value="Submit" class="submitBtn">
+                    <input name="redirect" type="hidden" value="confirm.html">
+                </form>
+           </main>
+           <br>
+        <br>
+        <br>
+        <br>
+           <footer>
+            <aside>                        
+                <div id="map">
+                        <img src="images/Bethesdamap.png" alt="Location Map">  
+                </div><br>
+            </aside>
+            <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            <p>Temple Inn and Suites | Phone: 240-555-1234 | www.ldstempleinnexperience.org</p>
+            <p>&copy; 2019 All Rights Reserved | <a href="resources.html">Resource Page</a> | <span id="currentdate"></span></p>
+           </footer>
+           <script src="scripts/currentdate.js"></script>
+           <script src="scripts/hamburger.js"></script>
+           <script src="scripts/wayfinding.js"></script>
+        </body>
+</html>
