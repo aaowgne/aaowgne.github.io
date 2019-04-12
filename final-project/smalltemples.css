@@ -1,0 +1,57 @@
+header{
+    background-color:black;   
+    text-align: center;
+    padding: .5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    
+    }
+    header > img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    vertical-align: middle;
+    
+    }
+    .headertext {
+        display: inline-block;
+        vertical-align: middle;
+        font-family: 'Tangerine', serif;
+        font-size: 48px;
+    }
+    .headertext h1{
+        font-size: 3rem;
+    
+    }
+    .motto{
+        font-size: 1.9rem;
+        color:white;
+        font-style: italic;
+    
+    }
+
+
+
+
+    footer{
+        background-color: #03012c;
+        text-align: center;        
+        padding: .5rem;
+        color: white;
+        height: 230px;
+        
+        }
+        div#map img{        
+            display: block;        
+            width: 300px; height: 200px;
+            margin: 10px;        
+            float: right;
+        }
+        
+        .clearfix:after {
+            content: "";
+            display: inline-flex;
+            clear: both;
+            
+        }
