@@ -216,6 +216,16 @@ header{
         background: white;
     }
 
+    .weathersummary {
+        
+        top: 20px;
+        left: 25px;
+        background-color: #002a22;
+        padding: .5rem;
+        box-shadow: 0 0 30px #777;
+        color:white;
+    }
+
     footer{
         background-color: #03012c;
         text-align: center;        
