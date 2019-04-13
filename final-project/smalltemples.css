@@ -96,7 +96,7 @@ header{
     }
 
     div.hero {
-        margin: 10px auto;
+        margin: 20px auto;
         position: relative;    
         width: 100%;
         height: 400px;
@@ -105,9 +105,9 @@ header{
     
       .hero-ph > img { 
         
-        margin: 10px auto;        
-        max-width: 1300px;
-        height: auto;
+        margin: 10px;        
+        width: 1300px;
+        height: 400px;
         padding: .5rem;
       }
 
