@@ -67,6 +67,50 @@ header{
     nav ul li.active a {background-color: #b33c86; color: #000;}
     nav ul.hide {display: none;}
 
+    article {
+        
+        border: 2px solid #D1D1D1;
+        margin: 20px;        
+        font-size: 1.3em;
+        line-height: 1.3em;
+        padding: 30px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),;
+    }
+    
+    article h3 {
+        
+        color: #222e50;
+        margin: 0;
+    }
+    
+    article h4 {
+        
+        margin: .4% 0;
+    }
+    
+    article p.intro-article img {
+        display: block;
+        margin: auto;
+        max-width: 50%;
+        padding: 0 0 20px 0;
+    }
+
+    div.hero {
+        margin: 10px auto;
+        position: relative;    
+        width: 100%;
+        height: 400px;
+        padding: .5rem;
+      }
+    
+      .hero-ph > img { 
+        
+        margin: 10px auto;        
+        max-width: 1300px;
+        height: auto;
+        padding: .5rem;
+      }
+
     div.templeGallery {
         padding: 0 2%;
         display: grid;
@@ -88,7 +132,8 @@ header{
         padding: 2% 1%;
     }
     form#userReport {
-        margin: 1em 3%;
+        max-width: 500px;
+        margin: auto;
         
     }
     fieldset {   
