@@ -55,3 +55,35 @@ else dir = "NW"
 
 document.getElementById("windDirection").textContent=dir;
 }
+var article = document.querySelector('article');
+var requestURL = 'https://aaowgne.github.io/final-project/templedata.json';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = function () {
+    var templeData = request.response;
+    showData(templeData);
+}
+function showData(jsonObj) {
+    var data = jsonObj['temples'];
+    for (var i = 0; i < data.length; i++) {
+        var name = data[i].name;
+        if ((name.includes("Saint George")) == false) {
+            continue;
+        }
+       
+        var myDiv = document.createElement('div');
+        var myList = document.createElement('ul');        
+        var templeEvents = data[i].events;
+       
+        for (var j = 0; j < templeEvents.length; j++) {
+            var listItem = document.createElement('li');
+            listItem.textContent = templeEvents[j];
+            myList.appendChild(listItem);
+        }
+        
+        myDiv.appendChild(myList);
+        article.appendChild(myDiv);
+    }
+}
