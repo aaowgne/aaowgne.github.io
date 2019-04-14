@@ -66,7 +66,7 @@ request.onload = function () {
     showData(templeData);
 }
 function showData(jsonObj) {
-    var data = jsonObj['temple'];
+    var data = jsonObj['temples'];
     for (var i = 0; i < data.length; i++) {
         var name = data[i].name;
         if ((name.includes("Logan")) == false) {
