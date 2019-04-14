@@ -32,7 +32,8 @@ header{
     }
     h1{
         text-align: center;
-          
+        font-family: 'Tangerine', serif;
+        font-size: 48px; 
       }
       h2{
         text-align: center;
