@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <div class="container col challenges">
+      <span class="single-challenge">Challenge 1</span>
+      <div class="container col">
+        <input id="input" style="width: 200px;" type="number" name="" id="" />
+        <button style="width: 200px;" onclick="displaySum()">+</button>
+        <input id="input2" style="width: 200px;" type="text" />
+        <button style="width: 200px;" onclick="getInput()">Click me :)</button>
+        <div id="display-something"></div>
+      </div>
+      <span class="single-challenge">Challenge 2</span>
+      <span class="single-challenge">Challenge 3</span>
+      <br />
+      <br />
+      <span class="single-challenge">Stretch 1</span>
+      <span class="single-challenge">Stretch 2</span>
+      <span class="single-challenge">Stretch 3</span>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
