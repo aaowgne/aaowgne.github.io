@@ -28,3 +28,1142 @@
     
   </body>
 </html>
+
+<!--Next week meeting-->
+
+const filtered = inventors.filter(function(item)
+{
+  return (item.year >=1500 && item.year <= 1599)
+});
+const names = inventors.map(function(item) {
+  return (item.first + " " + item.last);
+});
+console.log(names);
+const sortBithdates = inventors.sort(function(a, b){
+  return a.year - b.year;
+});
+console.log(sortBithdates);
+const reducedYears = inventors.reduce(function(total, item) {
+  let yearsLived = item.passed - item.year;
+  return total + yearsLived;
+}, 0);
+console.log(reducedYears);
+const sortYearsLived = inventors.sort(function(a, b){
+  let yearsA = a.passed - a.year;
+  let yearsB = b.passed - b.year;
+  return yearsA - yearsB;
+});
+console.log(sortYearsLived);
+const category = document.querySelector('.mw-category');
+const links = Array.from(category.querySelectorAll('a'));
+const streetNames = links.map(function(link){
+  return link.outerText;
+});
+const ourStreets = [
+  "Boulevards of Paris",
+  "City walls of Paris",
+  "Thiers wall",
+  "Wall of Charles V",
+  "Wall of Philip II Augustus",
+  "City gates of Paris",
+  "Haussmann's renovation of Paris",
+  "Boulevards of the Marshals",
+  "Boulevard Auguste-Blanqui",
+  "Boulevard Barbès",
+  "Boulevard Beaumarchais",
+  "Boulevard de l'Amiral-Bruix",
+  "Boulevard Mortier",
+  "Boulevard Poniatowski",
+  "Boulevard Soult",
+  "Boulevard des Capucines",
+  "Boulevard de la Chapelle",
+  "Boulevard de Clichy",
+  "Boulevard du Crime",
+  "Boulevard du Général-d'Armée-Jean-Simon",
+  "Boulevard Haussmann",
+  "Boulevard de l'Hôpital",
+  "Boulevard des Italiens",
+  "Boulevard Lefebvre",
+  "Boulevard de la Madeleine",
+  "Boulevard de Magenta",
+  "Boulevard Marguerite-de-Rochechouart",
+  "Boulevard Montmartre",
+  "Boulevard du Montparnasse",
+  "Boulevard Raspail",
+  "Boulevard Richard-Lenoir",
+  "Boulevard Saint-Germain",
+  "Boulevard Saint-Michel",
+   "Boulevard de Sébastopol",
+    "Boulevard de Strasbourg",
+    "Boulevard du Temple",
+    "Boulevard Voltaire",
+    "Boulevard de la Zone"]
+const filterStreets = streetNames.filter(function(item){
+  return item.includes("de");
+});
+console.log(filterStreets);
+const eachOf = [
+  {name: 'car', value: 0},
+  {name: 'truck', value: 0},
+  {name: 'bike', value: 0},
+  {name: 'walk', value: 0},
+  {name: 'van', value: 0}
+]
+const count = data.reduce(function(result, item){
+  let index = eachOf.indexOf(item.name);
+  result[index].value++;
+}, eachOf);
+console.log(count);
+
+
+<!--Next Week-->
+
+<body>
+  <div class="container col ta4">
+    <div class="container wrap-puzzle">
+      <div class="container col wrap-rows">
+        <div class="container row single-row">
+          <div onclick="playTurn(event)" class="container single-block"></div>
+          <div onclick="playTurn(event)" class="container single-block"></div>
+          <div onclick="playTurn(event)" class="container single-block"></div>
+        </div>
+        <div class="container row single-row">
+          <div onclick="playTurn(event)" class="container single-block"></div>
+          <div onclick="playTurn(event)" class="container single-block"></div>
+          <div onclick="playTurn(event)" class="container single-block"></div>
+        </div>
+        <div class="container row single-row">
+          <div onclick="playTurn(event)" class="container single-block"></div>
+          <div onclick="playTurn(event)" class="container single-block"></div>
+          <div onclick="playTurn(event)" class="container single-block"></div>
+        </div>
+      </div>
+    </div>
+    <button id="btn" class="btn">Reset</button>
+  </div>
+  <script src="./index.js"></script>
+</body>
+<script>
+let currentPlayer;
+const player1 = "X";
+const player2 = "O";
+currentPlayer = player1;
+const playTurn = (ev) => {
+  if (ev.target.innerText !== "") return;
+  ev.target.innerText = currentPlayer;
+  currentPlayer = currentPlayer === "X" ? player2 : player1;
+  let won = checkForWin();
+};
+document.getElementById("btn").addEventListener("click", () => {
+  const els = document.getElementsByClassName("single-block");
+  for (let i = 0; i < els.length; i++) {
+    els[i].innerText = "";
+  }
+});
+const checkForWin = () => {
+  const els = document.getElementsByClassName("single-block");
+  let rows = checkRows(els);
+  let count = 0;
+  for (let i = 0; i < els.length; i++) {
+    if (els[i].innerText !== "") count++;
+  }
+  if (count < 9) {
+    console.log("still playing");
+  } else {
+    console.log("game finished");
+    return false;
+  }
+};
+function checkRows(elements) {
+  for (let i = 0; i < elements.length; i += 3) {
+    for (let j = 0; j < 3; j++) {
+      if (elements[i].innerText === elements[j + 1].innerText) {
+        console.log(elements[j + 1].innerText);
+      }
+      if (elements[i] !== elements[j]) continue;
+    }
+  }
+}
+.ta4 {
+  width: 100vw;
+  .wrap-puzzle {
+    margin-top: 100px;
+    width: 900px;
+    // margin: 0 auto;
+    // height: 400px;
+    .wrap-rows {
+      .single-row {
+        .single-block {
+          width: 80px;
+          height: 80px;
+          cursor: pointer;
+          font-size: 30px;
+          color: #303d46;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+        }
+        .single-block:nth-of-type(1) {
+          border-bottom: 1px solid #303d46;
+          border-right: 1px solid #303d46;
+        }
+        .single-block:nth-of-type(2) {
+          border-bottom: 1px solid #303d46;
+        }
+        .single-block:nth-of-type(3) {
+          border-bottom: 1px solid #303d46;
+          border-left: 1px solid #303d46;
+        }
+      }
+      .single-row:last-of-type {
+        .single-block:nth-of-type(1) {
+          border-bottom: none;
+          border-right: 1px solid #303d46;
+        }
+        .single-block:nth-of-type(2) {
+          border-bottom: none;
+          // border-left: 1px solid #303d46;
+        }
+        .single-block:nth-of-type(3) {
+          border-bottom: none;
+          border-left: 1px solid #303d46;
+        }
+      }
+    }
+  }
+  .btn {
+    margin-top: 50px;
+    width: 200px;
+    height: 30px;
+  }
+}
+</script>
+<!--New week-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Great Hikes (dynamic DOM example)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./styles.css" ref="css">
+    <style>
+    </style>
+  </head>
+​
+  <body>
+    <main>
+      <h1>Great hikes</h1>
+      <ul id="hikes" class="hikeStyles">
+        <!-- your hike list should be build here. -->
+      </ul>
+    </main>
+    <!--<script src="./render.js"></script>-->
+    <script src="hiking-start.js" type="module"></script>
+    
+  </body>
+</html>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+img {
+  max-width: 100%;
+}
+</style>
+//create an array of hikes
+<script>
+export const hikeList = [
+    {
+      name: "Bechler Falls",
+      imgSrc: "falls.jpg",
+      imgAlt: "Image of Bechler Falls",
+      distance: "3 miles",
+      difficulty: "Easy",
+      description:
+        "Beautiful short hike along the Bechler river to Bechler Falls",
+      directions:
+        "Take Highway 20 north to Ashton. Turn right into the town and continue through. Follow that road for a few miles then turn left again onto the Cave Falls road.Drive to the end of the Cave Falls road. There is a parking area at the trailhead."
+    },
+    {
+      name: "Teton Canyon",
+      imgSrc: "falls.jpg",
+      imgAlt: "Image of Bechler Falls",
+      distance: "3 miles",
+      difficulty: "Easy",
+      description: "Beautiful short (or long) hike through Teton Canyon.",
+      directions:
+        "Take Highway 33 East to Driggs. Turn left onto Teton Canyon Road. Follow that road for a few miles then turn right onto Staline Raod for a short distance, then left onto Alta Road. Veer right after Alta back onto Teton Canyon Road. There is a parking area at the trailhead."
+    },
+    {
+      name: "Denanda Falls",
+      imgSrc: "falls.jpg",
+      imgAlt: "Image of Bechler Falls",
+      distance: "7 miles",
+      difficulty: "Moderate",
+      description:
+        "Beautiful hike through Bechler meadows river to Denanda Falls",
+      directions:
+        "Take Highway 20 north to Ashton. Turn right into the town and continue through. Follow that road for a few miles then turn left again onto the Cave Falls road. Drive to until you see the sign for Bechler Meadows on the left. Turn there. There is a parking area at the trailhead."
+    }
+    ];
+//on load grab the array and insert it into the page
+import {showHikeList} from "./render";
+window.addEventListener("load", () => {
+  showHikeList();
+});
+export function showHikeList() {
+    const hikeListElement = document.getElementById("hikes");
+    hikeListElement.innerHTML = "";
+    renderHikeList(hikeList, hikeListElement);
+  }
+  
+  function renderHikeList(hikes, parent) {
+    hikes.forEach(hike => {
+      parent.appendChild(renderOneHike(hike));
+    });
+  }
+  function renderOneHike(hike) {
+    const item = document.createElement("li");
+  
+    item.innerHTML = ` <h2>${hike.name}</h2>
+          <div class="image"><img src="./${hike.imgSrc}" alt="${hike.imgAlt}"></div>
+          <div>
+                  <div>
+                      <h3>Distance</h3>
+                      <p>${hike.distance}</p>
+                  </div>
+                  <div>
+                      <h3>Difficulty</h3>
+                      <p>${hike.difficulty}</p>
+                  </div>
+          </div>`;
+  
+    return item;
+  }
+</script>
+
+<!--Week 7-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Great Hikes (dynamic DOM example)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      main > h1 {
+        text-align: center;
+        background-color: indianred;
+        padding: 1em;
+        margin-top: 0;
+        margin-bottom: -0.5em;
+      }
+      img {
+        max-width: 100%;
+      }
+      .hidden {
+        display: none;
+      }
+      .hikeStyles {
+        padding: 0;
+        margin: 1em 0;
+        list-style-type: none;
+      }
+      .hikeStyles div {
+        padding: 0 0.5em;
+      }
+      .hikeStyles li > h2 {
+        text-align: center;
+        background-color: burlywood;
+        margin-bottom: 0.5em;
+      }
+​
+      .light {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .light > h2 {
+        width: 100%;
+        flex: 1 0 auto;
+      }
+​
+      .light > div {
+        width: 40%;
+        margin-left: 1em;
+        flex: 1 1 auto;
+      }
+      .light h3 {
+        margin-bottom: -0.5em;
+      }
+​
+      .single-note {
+        margin: 20px 0;
+      }
+      .wrap-name-date {
+        margin-bottom: 15px;
+      }
+      .name {
+        margin-right: 30px;
+      }
+​
+      .submit {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        margin-left: 50px;
+      }
+      #add-comment {
+        margin-right: 30px;
+      }
+    </style>
+  </head>
+​
+  <body>
+    <main>
+      <h1>Great hikes</h1>
+      <ul id="hikes" class="hikeStyles"></ul>
+      <ul id="comments" class="container col"></ul>
+      <div class="container submit">
+        <input
+          placeholder="activity-name"
+          type="text"
+          name=""
+          id="add-comment"
+        />
+        <button id="listen" type="submit">Submit Comment</button>
+      </div>
+    </main>
+​
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
+<script>import Hikes from "./hikes.js";
+  import Comments from "./comments.js";
+  ​
+  const myComments = new Comments("comments");
+  ​
+  //on load grab the array and insert it into the page
+  const myHikes = new Hikes("hikes");
+  window.addEventListener("load", () => {
+    myHikes.showHikeList();
+    myComments.showCommentsList();
+  });
+  ​
+  function addComment() {
+    let content = document.getElementById("add-comment").value;
+    console.log(content);
+  }
+  ​
+  document.getElementById("listen").addEventListener("click", addComment());</script>
+  <script>const hikeList = [
+    {
+      name: 'Bechler Falls',
+      imgSrc: 'falls.jpg',
+      imgAlt: 'Image of Bechler Falls',
+      distance: '3 miles',
+      difficulty: 'Easy',
+      description:
+        'Beautiful short hike along the Bechler river to Bechler Falls',
+      directions:
+        'Take Highway 20 north to Ashton. Turn right into the town and continue through. Follow that road for a few miles then turn left again onto the Cave Falls road.Drive to the end of the Cave Falls road. There is a parking area at the trailhead.'
+    },
+    {
+      name: 'Teton Canyon',
+      imgSrc: 'falls.jpg',
+      imgAlt: 'Image of Bechler Falls',
+      distance: '3 miles',
+      difficulty: 'Easy',
+      description: 'Beautiful short (or long) hike through Teton Canyon.',
+      directions:
+        'Take Highway 33 East to Driggs. Turn left onto Teton Canyon Road. Follow that road for a few miles then turn right onto Staline Raod for a short distance, then left onto Alta Road. Veer right after Alta back onto Teton Canyon Road. There is a parking area at the trailhead.'
+    },
+    {
+      name: 'Denanda Falls',
+      imgSrc: 'falls.jpg',
+      imgAlt: 'Image of Bechler Falls',
+      distance: '7 miles',
+      difficulty: 'Moderate',
+      description:
+        'Beautiful hike through Bechler meadows river to Denanda Falls',
+      directions:
+        'Take Highway 20 north to Ashton. Turn right into the town and continue through. Follow that road for a few miles then turn left again onto the Cave Falls road. Drive to until you see the sign for Bechler Meadows on the left. Turn there. There is a parking area at the trailhead.'
+    }
+  ];
+  ​
+  const imgBasePath = '//byui-cit.github.io/cit261/examples/';
+  ​
+  export default class Hikes {
+    constructor(elementId) {
+      this.parentElement = document.getElementById(elementId);
+      // we need a back button to return back to the list. This will build it and hide it. When we need it we just need to remove the 'hidden' class
+      this.backButton = this.buildBackButton();
+    }
+    // why is this function necessary?  hikeList is not exported, and so it cannot be seen outside of this module. I added this in case I ever need the list of hikes outside of the module. This also sets me up nicely if my data were to move. I can just change this method to the new source and everything will still work if I only access the data through this getter.
+    getAllHikes() {
+      return hikeList;
+    }
+    // For the first stretch we will need to get just one hike.
+    getHikeByName(hikeName) {
+      return this.getAllHikes().find(hike => hike.name === hikeName);
+    }
+    //show a list of hikes in the parentElement
+    showHikeList() {
+      this.parentElement.innerHTML = '';
+      // notice that we use our getter above to grab the list instead of getting it directly...this makes it easier on us if our data source changes...
+      renderHikeList(this.parentElement, this.getAllHikes());
+      this.addHikeListener();
+      // make sure the back button is hidden
+      this.backButton.classList.add('hidden');
+    }
+    // show one hike with full details in the parentElement
+    showOneHike(hikeName) {
+      const hike = this.getHikeByName(hikeName);
+      this.parentElement.innerHTML = '';
+      this.parentElement.appendChild(renderOneHikeFull(hike));
+      // show the back button
+      this.backButton.classList.remove('hidden');
+    }
+    // in order to show the details of a hike ontouchend we will need to attach a listener AFTER the list of hikes has been built. The function below does that.
+    addHikeListener() {
+      // We need to loop through the children of our list and attach a listener to each, remember though that children is a nodeList...not an array. So in order to use something like a forEach we need to convert it to an array.
+      const childrenArray = Array.from(this.parentElement.children);
+      childrenArray.forEach(child => {
+        child.addEventListener('touchend', e => {
+          // why currentTarget instead of target?
+          this.showOneHike(e.currentTarget.dataset.name);
+        });
+      });
+    }
+    buildBackButton() {
+      const backButton = document.createElement('button');
+      backButton.innerHTML = '&lt;- All Hikes';
+      backButton.addEventListener('touchend', () => {
+        this.showHikeList();
+      });
+      backButton.classList.add('hidden');
+      this.parentElement.before(backButton);
+      return backButton;
+    }
+  }
+  // End of Hikes class
+  // methods responsible for building HTML.  Why aren't these in the class?  They don't really need to be, and by moving them outside of the exported class, they cannot be called outside the module...they become private.
+  function renderHikeList(parent, hikes) {
+    hikes.forEach(hike => {
+      parent.appendChild(renderOneHikeLight(hike));
+    });
+  }
+  function renderOneHikeLight(hike) {
+    const item = document.createElement('li');
+    item.classList.add('light');
+    // setting this to make getting the details for a specific hike easier later.
+    item.setAttribute('data-name', hike.name);
+    item.innerHTML = ` <h2>${hike.name}</h2>
+  <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
+  <div>
+          <div>
+              <h3>Distance</h3>
+              <p>${hike.distance}</p>
+          </div>
+          <div>
+              <h3>Difficulty</h3>
+              <p>${hike.difficulty}</p>
+          </div>
+  </div>`;
+  ​
+    return item;
+  }
+  function renderOneHikeFull(hike) {
+    const item = document.createElement('li');
+    item.innerHTML = ` 
+      
+          <img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}">
+          <h2>${hike.name}</h2>
+          <div>
+              <h3>Distance</h3>
+              <p>${hike.distance}</p>
+          </div>
+          <div>
+              <h3>Difficulty</h3>
+              <p>${hike.difficulty}</p>
+          </div>
+          <div>
+              <h3>Description</h3>
+              <p>${hike.description}</p>
+          </div>
+          <div>
+              <h3>How to get there</h3>
+              <p>${hike.directions}</p>
+          </div>
+      
+      `;
+    return item;
+  }</script>
+  <script>let startComments = [
+    {
+      name: "Bechler Falls",
+      date: "2020-06-03T22:58:38.324Z",
+      content: "A nice hike",
+      type: "hike",
+    },
+    {
+      name: "Teton Canyon",
+      date: "2020-06-03T22:58:38.324Z",
+      content: "An okay hike",
+      type: "hike",
+    },
+    {
+      name: "Teton Canyon",
+      date: "2020-06-03T22:58:38.324Z",
+      content: "A bad hike",
+      type: "hike",
+    },
+    {
+      name: "Denanda Falls",
+      date: "2020-06-03T22:58:38.324Z",
+      content: "A horrible hike",
+      type: "waterfall",
+    },
+  ];
+  ​
+  export default class Comments {
+    constructor(elementId) {
+      this.parentElement = document.getElementById(elementId);
+      this.commentList = startComments;
+      this.addToLocalStorage();
+      this.readFromLocalStorage();
+    }
+  ​
+    getComments() {
+      return this.commentList;
+    }
+  ​
+    showCommentsList() {
+      const hikeComments = this.commentList.filter((el) => el.type === "hike");
+      hikeComments.map((comment) => {
+        this.parentElement.insertAdjacentHTML(
+          "beforeend",
+          `  <div class="container col single-note">
+      <div class="container wrap-name-date">
+        <span class="name">${comment.name}</span>
+        <span class="date">${comment.date}</span>
+      </div>
+      <span class="comment"
+        >${comment.content}</span
+      >
+      </div>`
+        );
+      });
+    }
+  ​
+    addToLocalStorage() {
+      sessionStorage.setItem("comments", JSON.stringify(this.commentList));
+    }
+  ​
+    readFromLocalStorage() {
+      let items = JSON.parse(
+        sessionStorage.getItem("comments", this.commentList)
+      );
+      console.log(items);
+    }
+  }</script>
+
+  <!--Week 8-->
+  <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../master.css">
+    <title>SWAPI consumption</title>
+  </head>
+  <body>
+    <button type="button" id="next" onclick="getNextPage()">Next</button><br>
+    <button type="button" id="previous" onclick="getPrevPage()">previous</button>
+    <ul id="SW-list">
+    </ul>
+    <div id="pages">
+​
+    </div>
+  </body>
+  <script src="../masterJS.js" charset="utf-8"></script>
+</html>
+<scriptvar startURL = "http://swapi.dev/api/starships";
+var nextURL = " ";
+var previousURL = " ";
+​
+function showHidden(e) {
+  console.log(e.getElementsByTagName('span'));
+  var span = e.getElementsByTagName('span')[0];
+  if (span.style.display == 'none')
+  {
+    span.style.display = "block";
+  }
+  else {
+    span.style.display = "none";
+  }
+​
+}
+​
+function jumpTo(num) {
+  var url = "http://swapi.dev/api/starships/?page=" + num;
+  getList(url);
+}
+​
+function listPages(count)
+{
+  var numPages = Math.ceil(count / 10);
+  console.log(numPages);
+  var str = "";
+  for (var i = 1; i <= numPages; i++)
+  {
+    str += '<button type="button" onclick="jumpTo('
+    str +=  i + ')">' + i + '</button>'
+  }
+  document.getElementById('pages').innerHTML = str;
+}
+​
+​
+function convert(text) {
+  var obj = JSON.parse(text);
+  listPages(obj.count);
+  if (obj.next != null)
+  {
+    nextURL = obj.next;
+    console.log(nextURL);
+  }
+  if (obj.previous != null)
+  {
+    previousURL = obj.previous;
+  }
+  var str = "";
+  console.log(obj);
+  for (var i = 0; i < obj.results.length; i++) {
+    str += "<li onclick='showHidden(this)'>"
+    str += "Name: " + obj.results[i].name + "<br>"
+    str += "<span style = 'display:none;'>"
+    str += "Model: " + obj.results[i].model + "<br>"
+    str += "Manufacturer: " + obj.results[i].manufacturer + "<br>"
+    str += "Cost in Credits: " + obj.results[i].cost_in_credits + "<br>"
+    str += "Length: " + obj.results[i].length
+    str += "</span>"
+    str += "<hr>"
+    str += "</li>"
+  }
+  document.getElementById('SW-list').innerHTML = str;
+}
+​
+function getFirstPage() {
+  getList(startURL);
+}
+function getNextPage() {
+  console.log("clicked");
+  getList(nextURL);
+}
+function getPrevPage() {
+  console.log("Why?");
+  getList(previousURL);
+}
+​
+function getList(url) {
+  fetch(url)
+  .then((response) => {
+      if(response.ok) {
+          return response;
+      }
+      throw Error(response.statusText);
+  })
+  .then( response => response.text() )
+  .then(text => convert(text))
+  .catch( error => document.getElementById('SW-list').innerHTML = "Not found. Try again." )
+}
+​
+document.body.addEventListener("load", getFirstPage())></script>
+
+<!--Week 10-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+  <audio data-key="65" src="sounds/clap.wav"></audio>
+  <audio data-key="83" src="sounds/hihat.wav"></audio>
+  <audio data-key="68" src="sounds/kick.wav"></audio>
+  <audio data-key="70" src="sounds/openhat.wav"></audio>
+  <audio data-key="71" src="sounds/boom.wav"></audio>
+  <audio data-key="72" src="sounds/ride.wav"></audio>
+  <audio data-key="74" src="sounds/snare.wav"></audio>
+  <audio data-key="75" src="sounds/tom.wav"></audio>
+  <audio data-key="76" src="sounds/tink.wav"></audio>
+  <script>
+    function removeTransition(e) {
+      if (e.propertyName !== 'transform') return;
+      e.target.classList.remove('playing');
+    }
+    function playSound(e) {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+      if (!audio) return;
+      key.classList.add('playing');
+      audio.currentTime = 0;
+      audio.play();
+      moveDown(key);
+    }
+    function moveDown(key){
+      let style = getComputedStyle(key);
+      let marginTop = parseInt(style.marginTop);
+      console.log(marginTop);
+      if (marginTop === 110){
+      key.style = 'margin-top : 10px';
+      }
+      else{
+        key.style = `margin-top : ${marginTop + 10}px`;
+      }
+    }
+    const keys = Array.from(document.querySelectorAll('.key'));
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    window.addEventListener('keydown', playSound);
+  </script>
+</body>
+</html>
+<script>function removeTransition(e) {
+      if (e.propertyName !== 'transform') return;
+      e.target.classList.remove('playing');
+    }
+    function playSound(e) {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+      if (!audio) return;
+      key.classList.add('playing');
+      audio.currentTime = 0;
+      audio.play();
+    }
+    const keys = Array.from(document.querySelectorAll('.key'));
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    window.addEventListener('keydown', playSound);</script>
+
+    <!--Week 10-->
+
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Local Quakes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+​
+  <body>
+    <main>
+      <h1>Quake List</h1>
+      <ul id="quakeList"></ul>
+    </main>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
+<script>
+  import QuakesController from "./QuakesController.js";
+​
+const control = new QuakesController("#quakeList");
+control.init();
+
+import { getJSON } from "./utilities.js";
+// Quake Model
+export default class Quake {
+  constructor() {
+    this.baseUrl =
+      "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2019-01-01&endtime=2019-03-02&";
+    // this is where we will store the last batch of retrieved quakes in the model.  I don't always do this...in this case the api doesn't have an endpoint to request one quake.
+    this._quakes = [];
+  }
+  async getEarthQuakesByRadius(position, radius = 100) {
+    const queryString = new URLSearchParams({
+      latitude: position.lat,
+      longitude: position.lon
+    }).toString();
+    // use the getJSON function and the position provided to build out the correct URL to get the data we need.  Store it into this._quakes, then return it
+    const response = await getJSON(
+      this.baseUrl + queryString + `&maxradiuskm=${radius}`
+    );
+    this._quakes = response;
+    return this._quakes;
+  }
+  getQuakeById(id) {
+    // filter this._quakes for the record identified by id and return it
+    return this._quakes.features.filter((item) => item.id === id)[0];
+  }
+
+
+import { getLocation } from "./utilities.js";
+import Quake from "./Quake.js";
+import QuakesView from "./QuakesView.js";
+​
+// Quake controller
+export default class QuakesController {
+  constructor(parent, position = null) {
+    this.parent = parent;
+    // sometimes the DOM won't exist/be ready when the Class gets instantiated, so we will set this later in the init()
+    this.parentElement = null;
+    // let's give ourselves the option of using a location other than the current location by passing it in.
+    this.position = position || {
+      lat: 0,
+      lon: 0
+    };
+    // this is how our controller will know about the model and view...we add them right into the class as members.
+    this.quakes = new Quake();
+    this.quakesView = new QuakesView();
+  }
+  async init() {
+    // use this as a place to grab the element identified by this.parent, do the initial call of this.initPos(), and display some quakes by calling this.getQuakesByRadius()
+    this.parentElement = document.querySelector(this.parent);
+    await this.initPos();
+    this.getQuakesByRadius();
+  }
+  async initPos() {
+    // if a position has not been set
+    if (this.position.lat === 0) {
+      try {
+        // try to get the position using getLocation()
+        await getLocation(null).then((data) => {
+          this.position = {
+            lat: data.coords.latitude,
+            lon: data.coords.longitude
+          };
+        });
+        // if we get the location back then set the latitude and longitude into this.position
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+​
+  async getQuakesByRadius(radius = 100) {
+    // this method provides the glue between the model and view. Notice it first goes out and requests the appropriate data from the model, then it passes it to the view to be rendered.
+    //set loading message
+    this.parentElement.innerHTML = "Loading...";
+    // get the list of quakes in the specified radius of the location
+    const quakeList = await this.quakes.getEarthQuakesByRadius(
+      this.position,
+      100
+    );
+    // render the list to html
+    this.quakesView.renderQuakeList(quakeList, this.parentElement);
+    // add a listener to the new list of quakes to allow drill down in to the details
+    this.parentElement.addEventListener("click", (e) => {
+      this.getQuakeDetails(e.target.id);
+    });
+  }
+  async getQuakeDetails(quakeId) {
+    let quake = this.quakes.getQuakeById(quakeId);
+    this.quakesView.renderQuake(quake, quakeId);
+  }
+
+// Quake View handler
+export default class QuakesView {
+  renderQuakeList(quakeList, listElement) {
+    //build a list of the quakes...include the title and time of each quake then append the list to listElement. You should also add the id of the quake record as a data- property to the li. ie. <li data-id="">
+    listElement.innerHTML = quakeList.features
+      .map((quake) => {
+        return `<div id="${quake.id}">
+  ${quake.properties.title}, ${new Date(quake.properties.time)}
+  </div>`;
+      })
+      .join("");
+  }
+  renderQuake(quake, element) {
+    console.log(quake.properties);
+    Object.keys(quake.properties).forEach((key) =>
+      document.getElementById(element).insertAdjacentHTML(
+        "beforeend",
+        `
+	<div> ${key} - ${quake.properties[key]}</div>
+	`
+      )
+    );
+    // for the provided quake make a list of each of the properties associated with it. Then append the list to the provided element. Notice the first line of this method. Object.entries() is a slick way to turn an object into an array so that we can iterate over it easier!
+  }
+}
+export const getJSON = (url) => {
+  return fetch(url)
+    .then(function (response) {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      } else {
+        return response.json();
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
+​
+export const getLocation = function (options) {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject, options);
+  });
+};
+</script>
+
+<!--Final Meeting-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Week 11 Team Activity</title>
+    <script src="./week11.js" type="module" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Yo!</h1>
+    <div id="login">
+      Username: <input type="text" id="username" value=""><br>
+      Password: <input type="password" id="password" value="">
+      <button type="button" onclick="myFunkyFunction()">Click it!</button>
+    </div>
+  </body>
+</html>
+<script>import makeRequest from './authHelpers.js';
+export default class Auth {
+  constructor() {
+    this.jwtToken = '';
+    this.user = {};
+  }
+​
+  async login(callback) {
+    // replace the ids below with whatever you used in your form.
+    const password = document.getElementById('password');
+    const username = document.getElementById('username');
+    const postData = {
+      email: username.value,
+      password: password.value
+    };
+    try {
+      // 1. use the makeRequest function to pass our credentials to the server
+      const response = await makeRequest('login', 'POST', postData)
+      // 2. if we get a successful response...we have a token!  Store it since we will need to send it with every request to the API.
+      console.log(response);
+      this.jwtToken = response.accessToken;
+      // let's get the user details as well and store them locally in the class
+      // you can pass a query to the API by appending it on the end of the url like this: 'users?email=' + email
+      this.user = await this.getCurrentUser(username.value);
+      // hide the login form.
+      document.getElementById('login').classList.add('hidden');
+      // clear the password
+      password.value = '';
+​
+      // since we have a token let's go grab some data from the API by executing the callback if one was passed in
+      if(callback) {
+        callback();
+      }
+    } catch (error) {
+      // if there were any errors display them
+      console.log(error);
+    }
+  }
+  // uses the email of the currently logged in user to pull up the full user details for that user from the database
+  async getCurrentUser(email) {
+    try {
+      // 3. add the code here to make a request for the user identified by email...don't forget to send the token!
+    } catch (error) {
+      // if there were any errors display them
+      console.log(error);
+    }
+  }
+​
+  set token(value) {
+    // we need this for the getter to work...but we don't want to allow setting the token through this.
+  }
+  get token() {
+    return this.jwtToken;
+  }
+} // end auth class
+
+// Server Address
+const baseURL = 'http://127.0.0.1:3000/';
+// helper function to make an http request with fetch.
+// returns a json object
+ export default async function makeRequest(url, method = 'GET', body = null, token = null) {
+  // we will need to set some custom options for our fetch call
+    let options = {
+    method: method,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  };
+  // if a token was passed in we should send it on.
+  // if we are sending any data with the request add it here
+  if (method == 'POST' || method == 'PUT') {
+    options.body = JSON.stringify(body);
+  }
+  if (token) {
+    options.headers.Authorization = `Bearer ${token}`;
+  }
+  const response = await fetch(baseURL + url, options);
+  // in this case we are processing the response as JSON before we check the status. The API we are using will send back more meaningful error messages than the default messages in the response, but we have to convert it before we can get to them.
+  const data = await response.json();
+​
+  if (!response.ok) {
+    // server will send a 500 server error if the token expires...or a 401 if we are not authorized, ie bad username/password combination, and a 404 if the URL we requested does not exist. All of these would cause response.ok to be false
+​
+    console.log(response);
+    throw new Error(`${data.status}: ${data.message}`);
+  } else return data;
+​
+  // not catching the error here...so we will need to catch it later on and handle it.
+}
+
+import Auth from "./auth.js"
+​
+let authorizer = new Auth();
+window.myFunkyFunction = function() {
+  authorizer.login();
+}
+</script>

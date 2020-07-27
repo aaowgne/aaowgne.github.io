@@ -15,3 +15,4 @@ function getInput() {
     let input2 = Number(document.getElementById("input2").value);
     document.getElementById("display-something").innerText = input + input2;
   }
+  
